@@ -16,6 +16,10 @@ overrideGlobalXHR();
 
 import axios from "axios";
 
+
+let info = {};
+let ip = "";
+let child = null;
 async function iniciarApp(computer, streamConfig) {
   if (child == null) {
     child = await StartMoonlight(computer, streamConfig, (data, log) =>
@@ -107,9 +111,6 @@ const moonlightBtn = document.getElementById("connectBtn");
 const submitBtn = document.getElementById("submitBtn");
 const inputIP = document.getElementById("formdoip");
 
-let info = {};
-let ip = "";
-let child = null;
 // setInterval(async () => {
 //   const new_ip = inputIP.value;
 //   if (new_ip == ip) return;
