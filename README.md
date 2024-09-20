@@ -1,18 +1,36 @@
-# demo-moonlight
+# Demo Moonlight
 
-Require: node version 18.19.0^
+## Requirements
+- Node.js version: **18.19.0** or higher
 
-`to run on local for develop`
+## Local Development Setup
+To run the project locally for development, follow these steps:
 
-git submodule update --init --recursive
+1. Initialize git submodules:
+   ```bash
+   git submodule update --init --recursive
+   ```
 
-npm i 
+2. Copy the Tauri configuration file:
+   ```bash
+   cp ./src-tauri/tauri.conf.vanilla.json ./src-tauri/tauri.conf.json
+   ```
 
-npm run build
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-npm run tauri dev
+4. Build the project:
+   ```bash
+   npm run build
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run tauri dev
+   ```
 
 
-`to build as executable file`
-
-./build.sh
+## Additional Resources
+- Daemon Server source: [Daemon Server GitHub](https://github.com/thinkonmay/binary/blob/groupobright/daemon.exe)
