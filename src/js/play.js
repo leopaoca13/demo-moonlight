@@ -1,3 +1,5 @@
+console.log("Importing B")
+import {CloseMoonlight, GetInfo, StartMoonlight } from "../../src-tauri/tauri.ts"
 window.game = "";
 window.server = "";
 window.launcher = "";
@@ -47,6 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $("#botn-logar").ready(function () {
   $("#botn-logar")[0].onclick = function () {
+    console.log("LOGAARRAR")
+    const computer = { address: '192.168.1.100' }; // Replace with your computer's address which running daemon
+    options = { bitrate: 8000, width: 1280, height: 720 };
+    StartMoonlight(computer, options, (type, log) => {
+        console.log(type, log);
+    }).then(stream => {
+        console.log('Moonlight streaming started:', stream);
+    }).catch(error => {
+        console.error('Error starting Moonlight:', error);
+    });
     logar();
     $("#botn-logar")[0].disabled = true;
     $("#botn-logar")[0].innerHTML = '<div class="btnloader"></div>';

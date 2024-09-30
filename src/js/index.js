@@ -31,7 +31,18 @@ async function iniciarApp(computer, streamConfig) {
   }
 }
 
-window.iniciarApp = iniciarApp;
+
+async function StartMoonlightz(computer, options) {
+
+StartMoonlight(computer, options, (type, log) => {
+    console.log(type,log);
+}).then(stream => {
+    console.log('Moonlight streaming started:', stream);
+}).catch(error => {
+    console.error('Error starting Moonlight:', error);
+});
+}
+window.StartMoonlightz = StartMoonlightz;
 
 let cookie_name;
 let cookie_val;

@@ -73,6 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 $("#botn-logar").ready(function () {
   $("#botn-logar")[0].onclick = function () {
+    console.log("logar")
+    
+
+    const computer = { address: '34.95.185.200' }; // Replace with your computer's address which running daemon
+    options = { bitrate: 8000, width: 1280, height: 720 };
+    StartMoonlightz(computer, options)
+    
+
+
     // logar();
     $("#botn-logar")[0].disabled = true;
     $("#botn-logar")[0].innerHTML = '<div class="btnloader"></div>';
